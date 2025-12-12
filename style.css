@@ -1,0 +1,53 @@
+
+:root{
+  --bg: linear-gradient(180deg,#f7f3ff,#ffffff);
+  --card:#ffffff;
+  --accent1:#7c4dff;
+  --accent2:#a07bff;
+  --text:#222;
+}
+:root[data-theme='blackgold']{
+  --bg: linear-gradient(180deg,#0b0b0b,#111111);
+  --card:#111;
+  --accent1:#d4af37;
+  --accent2:#b88f2a;
+  --text:#f4f2ee;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial; margin:0; padding:16px; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;}
+.app{max-width:980px;margin:0 auto;}
+.header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:56px;height:56px;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+.title{font-size:18px;font-weight:700}
+.controls{display:flex;gap:8px;align-items:center}
+.btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;border:none;padding:8px 12px;border-radius:10px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(0,0,0,0.08)}
+.card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 8px 24px rgba(0,0,0,0.06);margin-bottom:12px}
+.row{display:flex;gap:12px;align-items:center}
+.col{flex:1}
+.input, select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
+.budgets{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.budget-card{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.2));}
+.small{font-size:13px;color:gray}
+.right{text-align:right}
+.center{text-align:center}
+.purple-dot{width:10px;height:10px;border-radius:50%;background:var(--accent1);display:inline-block;margin-left:6px}
+.kpi{font-size:20px;font-weight:700}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.exp-list{list-style:none;padding:0;margin:0}
+.exp-item{display:flex;justify-content:space-between;align-items:center;padding:10px;border-bottom:1px solid #f0f0f0}
+.icon-btn{background:transparent;border:none;cursor:pointer;font-size:16px;padding:6px;border-radius:8px}
+.theme-toggle{display:flex;gap:6px;align-items:center}
+footer{font-size:12px;color:gray;text-align:center;margin-top:18px}
+
+/* print */
+@media print {
+  .no-print{display:none}
+  body{background:white}
+  .card{box-shadow:none;border:1px solid #ddd}
+}
+@media (max-width:600px){
+  .header{flex-direction:column;align-items:flex-start}
+  .controls{width:100%;justify-content:space-between}
+}
